@@ -1,0 +1,27 @@
+
+//Request
+
+// METHOD: POST
+
+// url: https://gpt-jam-backend.herokuapp.com/gpt/makeDishItems
+
+//BODY:
+{
+    "inputs": ["chicken","Potato","Salt"]
+}
+
+
+
+//Response
+{
+    "ingredients":["chicken","lemon","potato"],
+    "ingredientsMapping":{
+        "chicken":"itm0000032",
+        "lemon":"itm0000032",
+        "potato":"notFound"
+    },
+    "dishName":"Butter Potato",
+    "requiredQuantity": "text/html table body",
+    "howTo" : "text/html"
+
+}

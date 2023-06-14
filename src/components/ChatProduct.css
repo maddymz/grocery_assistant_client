@@ -1,0 +1,68 @@
+.chat_product{
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    vertical-align: middle;
+    justify-content: flex-end;
+    margin: 10px;
+    padding: 20px;
+    width: 80%;
+    max-height:  40px;
+    min-width: 100px;
+    border: 1px solid;
+    border-radius: 22px;
+    background-color: white;
+    
+    z-index: 1;
+}
+
+.chat_product > button{
+    background-color: #4CAF50; /* Green */
+    border: 1px solid;
+    color: white;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.chat_product__alt__btn{
+    background-color: #5e5065 !important; 
+    
+}
+
+
+.chat_product__price{
+    margin-top: 5px;
+    margin-bottom: 2px;
+    margin-right: 5px;
+    padding-right: 20px;
+}
+
+.chat_product_added{
+    margin-top: 5px;
+
+    margin-right: 5px;
+    padding-right: 20px;
+    align-content: center;
+
+}
+
+.chat_product__info{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.chat_product > img{
+    max-height: 40px;
+    width: 100%;
+    object-fit: contain;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}

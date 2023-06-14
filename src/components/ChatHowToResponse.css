@@ -1,0 +1,12 @@
+.chat_how_to_response{
+    border: 2px solid black;
+    border-radius: 7px;
+    align-items: center;
+    width: 90%;
+    text-align: center;
+}
+.chat_how_to_response_content{
+    text-align: justify;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
