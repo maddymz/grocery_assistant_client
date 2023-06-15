@@ -2,7 +2,7 @@
   height: 60px;
   display: flex;
   align-items: center;
-  background-color: rgb(88, 83, 90);
+  background-color: white;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -23,6 +23,7 @@
   align-items: center;
   border-radius: 24px;
 }
+
 .header__searchInput {
   height: 12px;
   padding: 10px;
@@ -33,7 +34,7 @@
 .header__searchIcon {
   padding: 5px;
   height: 22px !important;
-  background-color: #429ccd;
+  background-color: white;
 }
 
 .header__optionLineOne {
@@ -47,7 +48,7 @@
 .header__optionBasket{
     display: flex;
     align-items: center;
-    color: white;
+    color:black;
 }
 .header__basketCount{
     margin-left: 10px;
@@ -62,5 +63,5 @@
   flex-direction: column;
   margin-left: 10px;
   margin-right: 10px;
-  color: white;
+  color:black;
 }

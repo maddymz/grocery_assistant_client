@@ -65,11 +65,10 @@ const ChatWidget = () => {
       <Widget
         ref={widgetRef}
         handleNewUserMessage={handleMessageReceived}
-        title="Chat"
+        title="Grocery Assistant"
         subtitle={
           <div>
-            Ask me anything
-            {<button onClick={handleClearChat}>Clear Chat</button>}
+            Ask me anything    {<button className='chat_product__price' onClick={handleClearChat}>Clear Chat</button>}
           </div>
         }
         showCloseButton={true}

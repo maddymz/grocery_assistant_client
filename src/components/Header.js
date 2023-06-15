@@ -1,6 +1,6 @@
 import React from "react";
 import "./Header.css";
-import cloudLogo from "../assets/cloud9_logo.png";
+import cloudLogo from "../assets/grocery_logo.png";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-router-dom";
