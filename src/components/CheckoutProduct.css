@@ -31,6 +31,10 @@
 .checkoutProduct__price {
   margin-top: 5px;
   margin-bottom: 2px;
+  padding-right: 20px;
+  background: white;
+  border-radius: 5px;
+  margin-left: 10 px;
 }
 
 .checkoutProduct__info {

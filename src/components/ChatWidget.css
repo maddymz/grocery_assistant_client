@@ -1,3 +1,19 @@
 .rcw-widget-container {
    width: 55%;
   }
+
+.rcw-header {
+background-color:#4caf50 !important;
+}
+
+.rcw-response .rcw-message-text {
+   background-color: #f4f7f9;
+   border-radius: 10px;
+   max-width: 100% !important;
+   padding: 15px;
+   text-align: left;
+}
+
+.rcw-launcher {
+   background-color: #4caf50 !important;
+}
