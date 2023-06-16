@@ -68,7 +68,8 @@ const ChatWidget = () => {
         title="Grocery Assistant"
         subtitle={
           <div>
-            Ask me anything    {<button onClick={handleClearChat}>Clear Chat</button>}
+            Ask me anything <br/>
+            {<button className="rcw-button" onClick={handleClearChat}>Clear Chat</button>}
           </div>
         }
         showCloseButton={true}

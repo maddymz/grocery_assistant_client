@@ -17,3 +17,18 @@ background-color:#4caf50 !important;
 .rcw-launcher {
    background-color: #4caf50 !important;
 }
+
+.rcw-button {
+   background-color: white; /* Green */
+   border: 1px solid;
+   color: black;
+   width: 15%;
+   padding: 8px 32px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 14px;
+   border-radius: 15px;
+   margin-top: 20px;
+   cursor: pointer;
+}
