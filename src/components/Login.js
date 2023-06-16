@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import cloudLogo from "../assets/cloud9_logo.png";
+import cloudLogo from "../assets/login_groc_logo.png";
 import { Link , useNavigate} from "react-router-dom";
 import "./Login.css";
 import { auth } from "../config/firebase";
@@ -68,15 +68,6 @@ function Login() {
             Sign In
           </button>
         </form>
-
-        <p>
-          By Signing in you agree to terms and codition this is just a POC
-          project
-        </p>
-
-        <button onClick={register} className="login__registerButton">
-          Create Cloud-9 Account
-        </button>
       </div>
     </div>
   );
