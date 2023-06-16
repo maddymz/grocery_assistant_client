@@ -14,7 +14,7 @@ function Checkout() {
       <div className="checkout__left">
         <img className="checkout__ad" src={checkoutBanner} alt=""></img>
         <div>
-          <h3>Hello {user?.email} </h3>
+          <h3 className="checkout__user_title">Hello {user?.email} </h3>
           <h2 className="checkout__title"> Shopping Basket</h2>
           {basket.map((itm, idx)=> (<CheckoutProduct
                 id={itm.id} title={itm.title} price={itm.price} image={itm.image} rating={itm.rating} key={idx}
@@ -23,7 +23,6 @@ function Checkout() {
         </div>
       </div>
       <div className="checkout__right">
-
         <Subtotal/>
       </div>
     </div>

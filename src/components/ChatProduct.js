@@ -26,7 +26,6 @@ const addToBasket = () => {
     <div className="chat_product" >
       <div className="chat_product__info">
         <p>{title}</p>
-        
       </div>
       <img src={image} alt="" />
       <p className="chat_product__price">
