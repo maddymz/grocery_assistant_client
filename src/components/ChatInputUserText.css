@@ -1,32 +1,85 @@
-.chat_input{
-    display: flex;
-    align-items: center;
-    /* flex-direction: row; */
-    width: 35%;
+.chat_input_container{
+display: flex;
+flex-direction: column;
+width: 80%;
 
 }
 
-.chat_input_box{
-    display: flex;
-    height: 70%;
-    width: 25%;
-    flex: 1;
-    align-items: center;
-    border-radius: 8px;
+.chat_input {
+  display: flex;
+  align-items: center;
+  /* flex-direction: column; */
+  width: 80%;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
-.chat_input_confirm_button{
-    display: inline-flex;
-    flex-direction: row;
-    margin-left: 10px;
-    background-color: #4caf50; 
-    border: 2px solid;
-    color: white;
-    padding: 5px 12px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 800;
-    border-radius: 15px;
-    cursor: pointer;
+.chat_input_pref_container{
+  display: flex;
+  align-items: center;
+  /* align-content: center; */
+  /* flex-direction: column; */
+  width: fit-content;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-left: 25%;
+  padding: 20px 20px;
+  background-color: #f4f7f9;
+  border-radius: 15px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
+}
+
+.chat_input_preferences {
+  margin-left: 30px;
+  display: inline-flex;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+}
+
+.chat_radio_input {
+  display: none;
+}
+
+.chat_radio_label {
+  padding: 8px 24px;
+  font-size: 14px;
+  font-family: sans-serif;
+  color: #ffffff;
+  background: #4caf50;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.chat_radio_label:not(:last-of-type) {
+  border-right: 1px solid #2a7b2d;
+}
+
+.chat_radio_input:checked + .chat_radio_label {
+    background:  #2a7b2d;
+}
+
+.chat_input_box {
+  display: flex;
+  height: 70%;
+  width: 25%;
+  flex: 1;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.chat_input_confirm_button {
+  display: inline-flex;
+  flex-direction: row;
+  margin-left: 10px;
+  background-color: #4caf50;
+  border: 2px solid;
+  color: white;
+  padding: 5px 12px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 800;
+  border-radius: 15px;
+  cursor: pointer;
 }
