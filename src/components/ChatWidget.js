@@ -34,14 +34,6 @@ const ChatWidget = () => {
     // Send initial message with options as user messages
     addResponseMessage("Please select an option:");
     renderCustomComponent(ChatOptions, {});
-    // renderCustomComponent(ChatOptionButton, {
-    //   option: "What can i make from my orders ?",
-    //   id: "MAKE_DISH_FROM_ORDER",
-    // });
-    // renderCustomComponent(ChatOptionButton, {
-    //   option: "what can i make from ?",
-    //   id: "MAKE_DISH_FROM_ITEMS",
-    // });
   };
 
   const handleWidgetClick = () => {

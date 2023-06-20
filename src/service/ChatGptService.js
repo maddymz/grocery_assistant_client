@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useStateValue } from "./StateProvider";
 import { addResponseMessage, renderCustomComponent } from "react-chat-widget";
 import {
+  BULK_SHOP_PATH,
   GET_PATH,
   GPT_JAM_BACKEND_URL,
   GPT_PATH,
@@ -15,11 +16,18 @@ import ChatIngredientsResponse from "../components/ChatIngredientsResponse";
 import ChatDishName from "../components/ChatDishName";
 
 const GPTService = () => {
-  const [{ chatAction, chatUserInputs, triggerGPT }, dispach] = useStateValue();
+  const [{ chatAction, chatUserInputs, triggerGPT, triggerBulkShop }, dispach] = useStateValue();
 
   const setTriggerGPT = (inp) => {
     dispach({
       type: "TRIGGER_CHAT_API",
+      triggerValue: inp,
+    });
+  };
+
+  const setTriggerBulkShop = (inp) => {
+    dispach({
+      type: "TRIGGER_BULK_SHOP",
       triggerValue: inp,
     });
   };
@@ -30,7 +38,10 @@ const GPTService = () => {
       if (action === "MAKE_DISH") {
         url = url + MAKE_DISH_PATH;
       }
-      //TODO: add other cases for GPT endpoints in backend
+
+      if (action === "BULK_SHOP") {
+        url = url + BULK_SHOP_PATH;
+      }
 
       const response = await fetch(url, {
         method: "POST",
@@ -95,7 +106,6 @@ const GPTService = () => {
           const howTo = response.howTo;
           const requiredQuantity = response.requiredQuantity;
           const dishName = response.dishName;
-
           renderCustomComponent(ChatDishName, { dishName});
           renderCustomComponent(ChatHowToResponse, { howTo });
           renderCustomComponent(ChatIngredientsResponse, { requiredQuantity });
@@ -122,6 +132,46 @@ const GPTService = () => {
         });
     }
   }, [triggerGPT]);
+
+  useEffect(() => {
+    console.log("inside bulk shop use effect");
+    if (triggerBulkShop) {
+      // Perform API call
+      addResponseMessage(`OK Give me a minute let me think ....`);
+      fetchData(chatAction, chatUserInputs)
+        .then((response) => {
+          // Handle API response
+          // Dispatch actions to update Redux state
+          const howTo = response.howTo;
+          const requiredQuantity = response.requiredQuantity;
+          const dishName = response.dishName;
+          renderCustomComponent(ChatDishName, { dishName});
+          renderCustomComponent(ChatHowToResponse, { howTo });
+          renderCustomComponent(ChatIngredientsResponse, { requiredQuantity });
+
+          const itemIds = Object.entries(response.ingredientsMapping).map(([key, value]) => {
+            if (value === "NA") {
+              return `NA-${key}`;
+            } else {
+              return value;
+            }
+          });
+
+          fetchItems(itemIds).then((itemResult) => {
+            console.log("Fetching items..");
+            console.log(itemResult);
+            renderCustomComponent(ChatProductResponse, { itemResult });
+
+          });
+          setTriggerBulkShop(false);
+        })
+        .catch((error) => {
+          // Handle API call error
+          console.error("API call error:", error);
+          setTriggerBulkShop(false);
+        });
+    }
+  }, [triggerBulkShop]);
 
   return null; // Since this is a service, no component is rendered
 };

@@ -9,6 +9,10 @@ function ChatOptions() {
        option= "I want to make a Dish"
        id= "MAKE_DISH"
       />
+      <ChatOptionButton
+       option= "I want to shop in bulk"
+       id= "BULK_SHOP"
+      />
     </div>
   );
 }

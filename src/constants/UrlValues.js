@@ -15,5 +15,6 @@ export const UPDATE_PATH = `/update`;
 
 // GPT PATHS
 export const MAKE_DISH_PATH = `/makeDish`;
+export const BULK_SHOP_PATH = `/bulkShop`;
 export const MAKE_DISH_ORDER_PATH = `/makeDishOrder`;
 export const MAKE_DISH_ITEMS_PATH = `/makeDishItems`;
