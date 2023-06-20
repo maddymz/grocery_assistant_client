@@ -4,7 +4,7 @@ import "./ChatInputUserText.css";
 
 function ChatInputUserText({ option, id }) {
   const [{ chatAction, chatUserInputs, triggerGPT }, dispach] = useStateValue(); //dispach can be anything like setState
-  const [userText, setUserText] = useState("");
+  const [userText, setUserText] = useState(" ");
   const [userPref, setUserPref] = useState(" ");
 
   const onOptionChange = (e) => {
