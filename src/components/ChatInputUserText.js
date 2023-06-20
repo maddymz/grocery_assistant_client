@@ -3,7 +3,7 @@ import { useStateValue } from "../service/StateProvider";
 import "./ChatInputUserText.css";
 
 function ChatInputUserText({ option, id }) {
-  const [{ chatAction, chatUserInputs, triggerGPT }, dispach] = useStateValue(); //dispach can be anything like setState
+  const [{ chatAction, chatUserInputs, triggerGPT, triggerBulkShop }, dispach] = useStateValue(); //dispach can be anything like setState
   const [userText, setUserText] = useState(" ");
   const [userPref, setUserPref] = useState(" ");
 
@@ -25,17 +25,25 @@ function ChatInputUserText({ option, id }) {
     });
   };
 
-  const handleConfirmClick = () => {
-    saveChatUserInputs(
-      userText.split(",").map((item) =>( userPref + " " + item.trim()).trim() )
-    );
-    setTriggerGPT(true);
-    console.log(
-      "Now we will call chatGPT Depending on what ever the current action and userInputs are"
-    );
-    console.log(chatAction);
-    console.log(chatUserInputs);
-    console.log(triggerGPT);
+  const setTriggerBulkShop = (inp) => {
+    dispach({
+      type: "TRIGGER_BULK_SHOP",
+      triggerValue: inp,
+    });
+  };
+
+  const handleConfirmClick = (option) => {
+    saveChatUserInputs(userText.split(",").map((item) => item.trim()));
+    if (option.currentTarget.id === "BULK_SHOP") {
+      setTriggerBulkShop(true);
+    }else {
+      setTriggerGPT(true);
+    }
+    console.log( "Now we will call chatGPT Depending on what ever the current action and userInputs are");
+    console.log("chatAction", chatAction);
+    console.log("chatUserInputs", chatUserInputs);
+    console.log("triggerGPT", triggerGPT);
+    console.log("triggerBulkShop", triggerBulkShop);
   };
 
   return (
@@ -53,7 +61,7 @@ function ChatInputUserText({ option, id }) {
             className="chat_input_confirm_button"
             id={id}
             placeholder={option}
-            onClick={() => handleConfirmClick()}
+            onClick={(option) => handleConfirmClick(option)}
           >
             Confirm
           </button>

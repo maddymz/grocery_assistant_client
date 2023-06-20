@@ -3,7 +3,8 @@ export const initialState = {
   user: null,
   chatAction: "",
   chatUserInputs: [],
-  triggerGPT: false
+  triggerGPT: false,
+  triggerBulkShop: false
 };
 
 //selector
@@ -54,6 +55,11 @@ export const reducer = (state, action) => {
       return {
         ...state,
         triggerGPT: action.triggerValue
+      };
+    case "TRIGGER_BULK_SHOP":
+      return {
+        ...state,
+        triggerBulkShop: action.triggerValue
       };
     default:
       return state;

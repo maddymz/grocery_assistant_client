@@ -24,20 +24,12 @@ function ChatOptionButton({ option, id }) {
         id: "MAKE_DISH",
       });
     }
-    if (id === "MAKE_DISH_FROM_ORDER") {
-      addResponseMessage(`Ok can you give me your orderID with which you want to make a dish ??`);
+    if (id === "BULK_SHOP") {
+      addResponseMessage(`Please enter the dish name and number of days/weeks or people`);
       saveChatAction(id);
       renderCustomComponent(ChatInputUserText, {
-        option: "Which Order ID ?",
-        id: "MAKE_DISH_FROM_ORDER",
-      });
-    }
-    if (id === "MAKE_DISH_FROM_ITEMS") {
-      addResponseMessage(`Ok Just specify ingredients seperated by a comma and i'll try to suggest a dish ?? (keepn in mind I migt add some extra basic ingredients like salt)`);
-      saveChatAction(id);
-      renderCustomComponent(ChatInputUserText, {
-        option: "What all ingredients ?",
-        id: "MAKE_DISH_FROM_ITEMS",
+        option: "Number of days supply",
+        id: "BULK_SHOP",
       });
     }
   };
