@@ -12,6 +12,7 @@ import {
 import ChatProductResponse from "../components/ChatProductResponse";
 import ChatHowToResponse from "../components/ChatHowToResponse";
 import ChatIngredientsResponse from "../components/ChatIngredientsResponse";
+import ChatDishName from "../components/ChatDishName";
 
 const GPTService = () => {
   const [{ chatAction, chatUserInputs, triggerGPT }, dispach] = useStateValue();
@@ -83,7 +84,7 @@ const GPTService = () => {
   };
 
   useEffect(() => {
-    console.log("inside use effect");
+
     if (triggerGPT) {
       // Perform API call
       addResponseMessage(`OK Give me a minute let me think ....`);
@@ -93,7 +94,9 @@ const GPTService = () => {
           // Dispatch actions to update Redux state
           const howTo = response.howTo;
           const requiredQuantity = response.requiredQuantity;
+          const dishName = response.dishName;
 
+          renderCustomComponent(ChatDishName, { dishName});
           renderCustomComponent(ChatHowToResponse, { howTo });
           renderCustomComponent(ChatIngredientsResponse, { requiredQuantity });
 
@@ -106,7 +109,6 @@ const GPTService = () => {
           });
 
           fetchItems(itemIds).then((itemResult) => {
-            console.log("HERERE");
             console.log(itemResult);
             renderCustomComponent(ChatProductResponse, { itemResult });
 

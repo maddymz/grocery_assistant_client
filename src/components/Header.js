@@ -17,7 +17,6 @@ function Header() {
   }
 
 
-console.log("sa ",user);
   
   return (
     <div className="header">

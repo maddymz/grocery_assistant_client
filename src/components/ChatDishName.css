@@ -1,0 +1,19 @@
+.chat_name_response {
+    /* border: 2px solid black; */
+    margin-top: 50px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    flex-direction: row;
+    display: flex;
+    width: 90%;
+    font-size: large;
+    font-weight: 700;
+    padding-left: 25%;
+    text-align: justify;
+  }
+  .chat_name_response_content {
+    /* text-align: justify; */
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+  
