@@ -33,7 +33,7 @@ function ChatInputUserText({ option, id }) {
   };
 
   const handleConfirmClick = (option) => {
-    saveChatUserInputs(userText.split(",").map((item) => item.trim()));
+    saveChatUserInputs(userText.split(",").map((item) =>( userPref + " " + item.trim()).trim()));
     if (option.currentTarget.id === "BULK_SHOP") {
       setTriggerBulkShop(true);
     }else {
