@@ -5,7 +5,7 @@ Deployed using Firebase.
 
 Please see commands-to-RUN file for deployment
 
-### to build
+## to build
 ```
 npm run build
 OR
