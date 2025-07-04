@@ -1,4 +1,4 @@
-# GA Client app 
+### GA Client app 
 
 This is the front end app Language used -> React.
 Deployed using Firebase.
